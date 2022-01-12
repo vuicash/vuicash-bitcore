@@ -10,7 +10,7 @@ from test_framework.key import *
 import io
 import time
 
-class QtumPOSSegwitTest(BitcoinTestFramework):
+class VuicashPOSSegwitTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -146,4 +146,4 @@ class QtumPOSSegwitTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), block_count+1)
 
 if __name__ == '__main__':
-    QtumPOSSegwitTest().main()
+    VuicashPOSSegwitTest().main()

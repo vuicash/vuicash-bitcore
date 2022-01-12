@@ -243,8 +243,8 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     }
 
     //////////////////////////////////////////////////////// qtum
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-    globalSealEngine->setQtumSchedule(qtumDGP.getGasSchedule(nHeight));
+    VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+    globalSealEngine->setVuicashSchedule(qtumDGP.getGasSchedule(nHeight));
     uint32_t blockSizeDGP = qtumDGP.getBlockSize(nHeight);
     minGasPrice = qtumDGP.getMinGasPrice(nHeight);
     if(IsArgSet("-staker-min-tx-gas-price")) {
@@ -545,17 +545,17 @@ bool BlockAssembler::AttemptToAddContractToBlock(CTxMemPool::txiter iter, uint64
     uint64_t nBlockSize = this->nBlockSize;
     uint64_t nBlockSigOpsCost = this->nBlockSigOpsCost;
 
-    QtumTxConverter convert(iter->GetTx(), NULL, &pblock->vtx);
+    VuicashTxConverter convert(iter->GetTx(), NULL, &pblock->vtx);
 
-    ExtractQtumTX resultConverter;
-    if(!convert.extractionQtumTransactions(resultConverter)){
+    ExtractVuicashTX resultConverter;
+    if(!convert.extractionVuicashTransactions(resultConverter)){
         //this check already happens when accepting txs into mempool
         //therefore, this can only be triggered by using raw transactions on the staker itself
         return false;
     }
-    std::vector<QtumTransaction> qtumTransactions = resultConverter.first;
+    std::vector<VuicashTransaction> qtumTransactions = resultConverter.first;
     dev::u256 txGas = 0;
-    for(QtumTransaction qtumTransaction : qtumTransactions){
+    for(VuicashTransaction qtumTransaction : qtumTransactions){
         txGas += qtumTransaction.gas();
         if(txGas > txGasLimit) {
             // Limit the tx gas limit by the soft limit if such a limit has been specified.
@@ -1198,7 +1198,7 @@ void ThreadStakeMiner(CWallet *pwallet)
     }
 }
 
-void StakeQtums(bool fStake, CWallet *pwallet)
+void StakeVuicashs(bool fStake, CWallet *pwallet)
 {
     static boost::thread_group* stakeThread = NULL;
 

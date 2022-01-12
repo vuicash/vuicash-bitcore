@@ -12,7 +12,7 @@ from test_framework.blocktools import *
 """
 Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see qtum-dgp.py
 """
-class QtumDGPGasPriceLingeringMempoolTxTest(BitcoinTestFramework):
+class VuicashDGPGasPriceLingeringMempoolTxTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -82,4 +82,4 @@ class QtumDGPGasPriceLingeringMempoolTxTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    QtumDGPGasPriceLingeringMempoolTxTest().main()
+    VuicashDGPGasPriceLingeringMempoolTxTest().main()

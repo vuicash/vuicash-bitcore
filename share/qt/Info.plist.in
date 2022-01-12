@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Qtum-Qt</string>
+  <string>Vuicash-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Qtum-Qt</string>
+  <string>Vuicash-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.vuicash.Qtum-Qt</string>
+  <string>org.vuicash.Vuicash-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.qtum.QtumPayment</string>
+      <string>org.qtum.VuicashPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>qtum</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.qtum.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Qtum payment request</string>
+      <string>Vuicash payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

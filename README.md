@@ -1,29 +1,29 @@
-What is Qtum?
+What is Vuicash?
 -------------
 
-Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org
+Vuicash is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Vuicash's Bitcoin-like UTXO blockchain. For more general information about Vuicash as well as links to join our community, go to https://qtum.org
 
-Welcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Qtum, we highly recommend using either testnet or regtest mode. 
+Welcome to the Vuicash Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Vuicash, we highly recommend using either testnet or regtest mode. 
 
-The major features of the Qtum network include:
+The major features of the Vuicash network include:
 
-1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Qtum. 
-2. A Proof of Stake consensus system which is optimized for Qtum's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Qtum that have created blocks in the past. 
+1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Vuicash. 
+2. A Proof of Stake consensus system which is optimized for Vuicash's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Vuicash that have created blocks in the past. 
 3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
-4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Qtum. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
+4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Vuicash. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
 
-Note: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.
+Note: Vuicash Core is considered beta software. We make no warranties or guarantees of its security or stability.
 
-Qtum Documentation and Usage Resources
+Vuicash Documentation and Usage Resources
 ---------------
 
-These are some resources that might be helpful in understanding Qtum. Note that the unofficial documents are not created by the Qtum team.
+These are some resources that might be helpful in understanding Vuicash. Note that the unofficial documents are not created by the Vuicash team.
 
 Basic usage resources:
 
-* [Official Qtum Usage Guide](https://github.com/vuicash/qtum/wiki/Qtum-Wallet-Tutorial)
-* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)
-* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-vuicashd-on-a-raspberry-pi-3)
+* [Official Vuicash Usage Guide](https://github.com/vuicash/qtum/wiki/Vuicash-Wallet-Tutorial)
+* [Unofficial Vuicash staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)
+* [Unofficial Vuicash staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-vuicashd-on-a-raspberry-pi-3)
 * [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)
 * [Block explorer](https://explorer.qtum.org)
 * [Unofficial block explorer](https://qtumexplorer.io/)
@@ -31,17 +31,17 @@ Basic usage resources:
 
 Development resources:
 
-* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
+* [Deploying a custom token to Vuicash](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
 * [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
-* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)
-* [Qtum Book - A Developer's Guide To VUI](https://github.com/vuicash/qtumbook)
+* [Unofficial Vuicash Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)
+* [Vuicash Book - A Developer's Guide To VUI](https://github.com/vuicash/qtumbook)
 
-General Info about Qtum:
+General Info about Vuicash:
 
-* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)
-* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
-* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
-* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)
+* [Mainnet event AMA](https://www.reddit.com/r/Vuicash/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)
+* [Vuicash's PoS vs CASPER](https://www.reddit.com/r/Vuicash/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
+* [Technical article explaining Vuicash's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
+* [Unofficial What is Vuicash article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)
 
 Developer's Tools
 -----------------
@@ -60,28 +60,28 @@ Developer's Tools
   * https://github.com/vuicash/insight-api
 
 
-What is Qtum Core?
+What is Vuicash Core?
 ------------------
 
-Qtum Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Qtum network. Qtum Core is considered the reference implementation for the Qtum network. 
+Vuicash Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Vuicash network. Vuicash Core is considered the reference implementation for the Vuicash network. 
 
-Qtum Core currently implements the following:
+Vuicash Core currently implements the following:
 
-* Sending/Receiving Qtum
-* Sending/Receiving QRC20 tokens on the Qtum network
-* Staking and creating blocks for the Qtum network
+* Sending/Receiving Vuicash
+* Sending/Receiving QRC20 tokens on the Vuicash network
+* Staking and creating blocks for the Vuicash network
 * Creating and interacting with smart contracts
 * Running a full node for distributing the blockchain to other users
 * "Prune" mode, which minimizes disk usage
-* Regtest mode, which enables developers to very quickly build their own private Qtum network for Dapp testing
+* Regtest mode, which enables developers to very quickly build their own private Vuicash network for Dapp testing
 * Compatibility with the Bitcoin Core set of RPC commands and APIs
 
 Alternative Wallets
 -------------------
 
-Qtum Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
+Vuicash Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
 
-### Qtum Electrum
+### Vuicash Electrum
 
 A light wallet that supports the Ledger hardware wallet and is based on the well known Electrum wallet software. 
 
@@ -99,15 +99,15 @@ iOS Download: https://github.com/vuicash/qtum-ios (open source, we are still wor
 
 This light wallet runs in your Chrome browser as a browser extension. This wallet requires a Ledger device to use.
 
-How to install: https://ledger.zendesk.com/hc/en-us/articles/115003776913-How-to-install-and-use-Qtum-with-Ledger
+How to install: https://ledger.zendesk.com/hc/en-us/articles/115003776913-How-to-install-and-use-Vuicash-with-Ledger
 
 
-Building Qtum Core
+Building Vuicash Core
 ----------
 
 ### Build on Ubuntu
 
-This is a quick start script for compiling Qtum on  Ubuntu
+This is a quick start script for compiling Vuicash on  Ubuntu
 
 
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev
@@ -129,7 +129,7 @@ This is a quick start script for compiling Qtum on  Ubuntu
     
 ### Build on CentOS
 
-Here is a brief description for compiling Qtum on CentOS, for more details please refer to [the specific document](https://github.com/vuicash/qtum/blob/master/doc/build-unix.md)
+Here is a brief description for compiling Vuicash on CentOS, for more details please refer to [the specific document](https://github.com/vuicash/qtum/blob/master/doc/build-unix.md)
 
     # Compiling boost manually
     sudo yum install python-devel bzip2-devel
@@ -141,14 +141,14 @@ Here is a brief description for compiling Qtum on CentOS, for more details pleas
     ./b2 headers
     sudo ./b2 -j4 install
     
-    # Installing Dependencies for Qtum
+    # Installing Dependencies for Vuicash
     sudo yum install epel-release
     sudo yum install libtool libdb4-cxx-devel openssl-devel libevent-devel
     
     # If you want to build the Qt GUI:
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
     
-    # Building Qtum
+    # Building Vuicash
     git clone --recursive https://github.com/vuicash/qtum.git
     cd qtum
     ./autogen.sh
@@ -157,7 +157,7 @@ Here is a brief description for compiling Qtum on CentOS, for more details pleas
 
 ### Additional instructions for Ubuntu 14.04
 
-Ubuntu 14.04 has many packages that are out of date by default, so before building Qtum you must update these:
+Ubuntu 14.04 has many packages that are out of date by default, so before building Vuicash you must update these:
 
     #update cmake from source
     sudo apt-get install build-essential
@@ -217,7 +217,7 @@ Then install [Homebrew](https://brew.sh).
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-#### Build Qtum Core
+#### Build Vuicash Core
 
 1. Clone the qtum source code and cd into `qtum`
 
@@ -242,19 +242,19 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 Then you can either run the command-line daemon using `src/vuicashd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
 
-For in-depth description of Sparknet and how to use Qtum for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
+For in-depth description of Sparknet and how to use Vuicash for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
 
 License
 -------
 
-Qtum is GPLv3 licensed.
+Vuicash is GPLv3 licensed.
 
 Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags](https://github.com/vuicash/qtum/tags) are created
-regularly to indicate new official, stable release versions of Qtum.
+regularly to indicate new official, stable release versions of Vuicash.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 

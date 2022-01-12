@@ -10,7 +10,7 @@ import sys
 import random
 import time
 
-class QtumPrematureCoinstakeSpendTest(BitcoinTestFramework):
+class VuicashPrematureCoinstakeSpendTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -76,4 +76,4 @@ class QtumPrematureCoinstakeSpendTest(BitcoinTestFramework):
         self.assert_spend_of_coinstake_at_height(height=4502, should_accept=False)
 
 if __name__ == '__main__':
-    QtumPrematureCoinstakeSpendTest().main()
+    VuicashPrematureCoinstakeSpendTest().main()

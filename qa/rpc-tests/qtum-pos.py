@@ -13,7 +13,7 @@ from test_framework.key import CECKey
 import io
 import struct
 
-class QtumPOSTest(ComparisonTestFramework):
+class VuicashPOSTest(ComparisonTestFramework):
     def __init__(self):
         super().__init__()
         self.num_nodes = 1
@@ -344,4 +344,4 @@ class QtumPOSTest(ComparisonTestFramework):
         assert_equal(self.node.getblockcount(), block_count+1)
 
 if __name__ == '__main__':
-    QtumPOSTest().main()
+    VuicashPOSTest().main()

@@ -56,15 +56,15 @@ namespace qtum{
 
 class CondensingTX;
 
-class QtumState : public dev::eth::State {
+class VuicashState : public dev::eth::State {
     
 public:
 
-    QtumState();
+    VuicashState();
 
-    QtumState(dev::u256 const& _accountStartNonce, dev::OverlayDB const& _db, const std::string& _path, dev::eth::BaseState _bs = dev::eth::BaseState::PreExisting);
+    VuicashState(dev::u256 const& _accountStartNonce, dev::OverlayDB const& _db, const std::string& _path, dev::eth::BaseState _bs = dev::eth::BaseState::PreExisting);
 
-    ResultExecute execute(dev::eth::EnvInfo const& _envInfo, dev::eth::SealEngineFace const& _sealEngine, QtumTransaction const& _t, dev::eth::Permanence _p = dev::eth::Permanence::Committed, dev::eth::OnOpFunc const& _onOp = OnOpFunc());
+    ResultExecute execute(dev::eth::EnvInfo const& _envInfo, dev::eth::SealEngineFace const& _sealEngine, VuicashTransaction const& _t, dev::eth::Permanence _p = dev::eth::Permanence::Committed, dev::eth::OnOpFunc const& _onOp = OnOpFunc());
 
     void setRootUTXO(dev::h256 const& _r) { cacheUTXO.clear(); stateUTXO.setRoot(_r); }
 
@@ -78,9 +78,9 @@ public:
 
     dev::OverlayDB& dbUtxo() { return dbUTXO; }
 
-    static const dev::Address createQtumAddress(dev::h256 hashTx, uint32_t voutNumber);
+    static const dev::Address createVuicashAddress(dev::h256 hashTx, uint32_t voutNumber);
 
-    virtual ~QtumState(){}
+    virtual ~VuicashState(){}
 
     friend CondensingTX;
 
@@ -117,11 +117,11 @@ private:
 
 
 struct TemporaryState{
-    std::unique_ptr<QtumState>& globalStateRef;
+    std::unique_ptr<VuicashState>& globalStateRef;
     dev::h256 oldHashStateRoot;
     dev::h256 oldHashUTXORoot;
 
-    TemporaryState(std::unique_ptr<QtumState>& _globalStateRef) : 
+    TemporaryState(std::unique_ptr<VuicashState>& _globalStateRef) : 
         globalStateRef(_globalStateRef),
         oldHashStateRoot(globalStateRef->rootHash()), 
         oldHashUTXORoot(globalStateRef->rootHashUTXO()) {}
@@ -149,7 +149,7 @@ class CondensingTX{
 
 public:
 
-    CondensingTX(QtumState* _state, const std::vector<TransferInfo>& _transfers, const QtumTransaction& _transaction, std::set<dev::Address> _deleteAddresses = std::set<dev::Address>()) : transfers(_transfers), deleteAddresses(_deleteAddresses), transaction(_transaction), state(_state){}
+    CondensingTX(VuicashState* _state, const std::vector<TransferInfo>& _transfers, const VuicashTransaction& _transaction, std::set<dev::Address> _deleteAddresses = std::set<dev::Address>()) : transfers(_transfers), deleteAddresses(_deleteAddresses), transaction(_transaction), state(_state){}
 
     CTransaction createCondensingTX();
 
@@ -185,9 +185,9 @@ private:
     //So, making this unordered_set could be an attack vector
     const std::set<dev::Address> deleteAddresses;
 
-    const QtumTransaction& transaction;
+    const VuicashTransaction& transaction;
 
-    QtumState* state;
+    VuicashState* state;
 
     bool voutOverflow = false;
 

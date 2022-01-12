@@ -13,7 +13,7 @@ import sys
 import random
 import time
 
-class QtumEVMGlobalsTest(BitcoinTestFramework):
+class VuicashEVMGlobalsTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -220,4 +220,4 @@ class QtumEVMGlobalsTest(BitcoinTestFramework):
         self.sync_all()
 
 if __name__ == '__main__':
-    QtumEVMGlobalsTest().main()
+    VuicashEVMGlobalsTest().main()

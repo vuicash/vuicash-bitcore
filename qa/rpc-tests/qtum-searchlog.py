@@ -9,7 +9,7 @@ from test_framework.script import *
 from test_framework.mininode import *
 import sys
 
-class QtumRPCSearchlogsTest(BitcoinTestFramework):
+class VuicashRPCSearchlogsTest(BitcoinTestFramework):
 
    def __init__(self):
        super().__init__()
@@ -86,4 +86,4 @@ class QtumRPCSearchlogsTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-   QtumRPCSearchlogsTest().main()
+   VuicashRPCSearchlogsTest().main()

@@ -10,7 +10,7 @@ from test_framework.qtum import *
 """
  This test specifically tests that inputs to transactions in the mempool are not used in staking.
 """
-class QtumPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
+class VuicashPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.num_nodes = 2
@@ -105,4 +105,4 @@ class QtumPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
         assert_equal(int(self.nodes[0].getbalance()*COIN), int(20*20000*COIN))
 
 if __name__ == '__main__':
-    QtumPOSConflictingStakingMempoolTxTest().main()
+    VuicashPOSConflictingStakingMempoolTxTest().main()

@@ -13,7 +13,7 @@ import sys
 import time
 
 
-class QtumDGPTest(BitcoinTestFramework):
+class VuicashDGPTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -1124,4 +1124,4 @@ class QtumDGPTest(BitcoinTestFramework):
         state.assert_state()
 
 if __name__ == '__main__':
-    QtumDGPTest().main()
+    VuicashDGPTest().main()

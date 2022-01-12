@@ -8,7 +8,7 @@ from test_framework.qtum import *
 from test_framework.address import *
 import time
 
-class QtumManyValueRefundsFromSameTxTest(BitcoinTestFramework):
+class VuicashManyValueRefundsFromSameTxTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -43,4 +43,4 @@ class QtumManyValueRefundsFromSameTxTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), block_count+1)
 
 if __name__ == '__main__':
-    QtumManyValueRefundsFromSameTxTest().main()
+    VuicashManyValueRefundsFromSameTxTest().main()

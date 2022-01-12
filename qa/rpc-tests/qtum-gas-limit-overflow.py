@@ -11,7 +11,7 @@ import random
 import time
 import io
 
-class QtumGasLimitOverflowTest(BitcoinTestFramework):
+class VuicashGasLimitOverflowTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -36,4 +36,4 @@ class QtumGasLimitOverflowTest(BitcoinTestFramework):
         self.node.generate(1)
 
 if __name__ == '__main__':
-    QtumGasLimitOverflowTest().main()
+    VuicashGasLimitOverflowTest().main()

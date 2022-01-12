@@ -32,7 +32,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>VuicashGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>

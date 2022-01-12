@@ -12,7 +12,7 @@ import sys
 
 RPC_INVALID_PARAMETER = -8
 
-class QtumRPCWaitforlogs(BitcoinTestFramework):
+class VuicashRPCWaitforlogs(BitcoinTestFramework):
 
    def __init__(self):
        super().__init__()
@@ -130,4 +130,4 @@ class QtumRPCWaitforlogs(BitcoinTestFramework):
        self.check_topics(contract_addresses, block_hashes,send_result)
 
 if __name__ == '__main__':
-   QtumRPCWaitforlogs().main()
+   VuicashRPCWaitforlogs().main()

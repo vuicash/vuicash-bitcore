@@ -1466,7 +1466,7 @@ void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Qtum " + FormatFullVersion();
+        std::string strDesc = "Vuicash " + FormatFullVersion();
 
         try {
             while (true) {

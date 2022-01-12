@@ -10,7 +10,7 @@ from test_framework.blocktools import *
 import time
 import io
 
-class QtumSpendOpCallTest(BitcoinTestFramework):
+class VuicashSpendOpCallTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -60,4 +60,4 @@ class QtumSpendOpCallTest(BitcoinTestFramework):
         assert_equal(self.nodes[0].getblockcount(), block_count)
 
 if __name__ == '__main__':
-    QtumSpendOpCallTest().main()
+    VuicashSpendOpCallTest().main()

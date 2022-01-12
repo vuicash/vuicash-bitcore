@@ -202,7 +202,7 @@ void Shutdown()
 #ifdef ENABLE_WALLET
     if (pwalletMain)
     {
-        StakeQtums(false, pwalletMain);
+        StakeVuicashs(false, pwalletMain);
         pwalletMain->Flush(false);
     }
 #endif
@@ -805,7 +805,7 @@ void InitLogging()
     fLogIPs = GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Qtum version %s\n", FormatFullVersion());
+    LogPrintf("Vuicash version %s\n", FormatFullVersion());
 }
 
 namespace { // Variables internal to initialization process only
@@ -1476,7 +1476,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
                 pcoinsTip = new CCoinsViewCache(pcoinscatcher);
 
                 if (fReindex) {
-                    boost::filesystem::path stateDir = GetDataDir() / "stateQtum";
+                    boost::filesystem::path stateDir = GetDataDir() / "stateVuicash";
                     StorageResults storageRes(stateDir.string());
                     storageRes.wipeResults();
                     pblocktree->WriteReindexing(true);
@@ -1511,13 +1511,13 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
                 dev::eth::Ethash::init();
 
-                boost::filesystem::path qtumStateDir = GetDataDir() / "stateQtum";
+                boost::filesystem::path qtumStateDir = GetDataDir() / "stateVuicash";
 
                 bool fStatus = boost::filesystem::exists(qtumStateDir);
-                const std::string dirQtum(qtumStateDir.string());
+                const std::string dirVuicash(qtumStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-                dev::eth::BaseState existsQtumstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
-                globalState = std::unique_ptr<QtumState>(new QtumState(dev::u256(0), QtumState::openDB(dirQtum, hashDB, dev::WithExisting::Trust), dirQtum, existsQtumstate));
+                dev::eth::BaseState existsVuicashstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
+                globalState = std::unique_ptr<VuicashState>(new VuicashState(dev::u256(0), VuicashState::openDB(dirVuicash, hashDB, dev::WithExisting::Trust), dirVuicash, existsVuicashstate));
                 dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::qtumMainNetwork)));
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
@@ -1759,7 +1759,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (!GetBoolArg("-staking", DEFAULT_STAKE))
         LogPrintf("Staking disabled\n");
     else if (pwalletMain)
-        StakeQtums(true, pwalletMain);
+        StakeVuicashs(true, pwalletMain);
 #endif
     // ********************************************************* Step 12: finished
 

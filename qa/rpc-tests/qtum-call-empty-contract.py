@@ -9,7 +9,7 @@ from test_framework.script import *
 from test_framework.mininode import *
 import sys
 
-class QtumCallContractStateNotRevertedTest(BitcoinTestFramework):
+class VuicashCallContractStateNotRevertedTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -37,4 +37,4 @@ class QtumCallContractStateNotRevertedTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    QtumCallContractStateNotRevertedTest().main()
+    VuicashCallContractStateNotRevertedTest().main()

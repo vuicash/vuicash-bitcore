@@ -10,7 +10,7 @@ import time
 
 NUM_OUTPUTS = 1000
 
-class QtumGasLimit(BitcoinTestFramework):
+class VuicashGasLimit(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -56,4 +56,4 @@ class QtumGasLimit(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    QtumGasLimit().main()
+    VuicashGasLimit().main()

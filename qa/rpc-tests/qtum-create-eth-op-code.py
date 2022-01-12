@@ -8,7 +8,7 @@ from test_framework.qtum import *
 from test_framework.address import *
 
 
-class QtumCreateEthOpCodeTest(BitcoinTestFramework):
+class VuicashCreateEthOpCodeTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -184,4 +184,4 @@ class QtumCreateEthOpCodeTest(BitcoinTestFramework):
         self.check_suicide_test()
 
 if __name__ == '__main__':
-    QtumCreateEthOpCodeTest().main()
+    VuicashCreateEthOpCodeTest().main()

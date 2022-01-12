@@ -15,7 +15,7 @@ import random
 """
 Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see qtum-dgp.py
 """
-class QtumDGPActivation(BitcoinTestFramework):
+class VuicashDGPActivation(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -125,4 +125,4 @@ class QtumDGPActivation(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    QtumDGPActivation().main()
+    VuicashDGPActivation().main()

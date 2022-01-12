@@ -10,7 +10,7 @@ import sys
 import random
 
 
-class QtumSoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
+class VuicashSoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -175,4 +175,4 @@ class QtumSoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
         self.verify_hard_block_gas_limit_test()
 
 if __name__ == '__main__':
-    QtumSoftMinerGasRelatedLimitsTest().main()
+    VuicashSoftMinerGasRelatedLimitsTest().main()

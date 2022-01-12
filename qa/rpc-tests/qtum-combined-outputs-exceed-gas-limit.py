@@ -8,7 +8,7 @@ from test_framework.qtum import *
 from test_framework.address import *
 import time
 
-class QtumCombinedOutputsExceedGasLimitTest(BitcoinTestFramework):
+class VuicashCombinedOutputsExceedGasLimitTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -49,4 +49,4 @@ class QtumCombinedOutputsExceedGasLimitTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), block_count+2)
 
 if __name__ == '__main__':
-    QtumCombinedOutputsExceedGasLimitTest().main()
+    VuicashCombinedOutputsExceedGasLimitTest().main()

@@ -24,7 +24,7 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Build Qtum Core
+Build Build Vuicash Core
 ------------------------
 
 1. Clone the qtum source code and cd into `qtum`

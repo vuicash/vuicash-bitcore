@@ -132,7 +132,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.push_back(CDNSSeedData("qtum3.dynu.net", "qtum3.dynu.net", false)); // Qtum mainnet
+        vSeeds.push_back(CDNSSeedData("qtum3.dynu.net", "qtum3.dynu.net", false)); // Vuicash mainnet
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
@@ -231,9 +231,9 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("qtum4.dynu.net", "qtum4.dynu.net", false)); // Qtum testnet
+        vSeeds.push_back(CDNSSeedData("qtum4.dynu.net", "qtum4.dynu.net", false)); // Vuicash testnet
 
-        vSeeds.push_back(CDNSSeedData("qtum-testnet1.earlz.net", "qtum-testnet1.earlz.net", false)); // Qtum testnet
+        vSeeds.push_back(CDNSSeedData("qtum-testnet1.earlz.net", "qtum-testnet1.earlz.net", false)); // Vuicash testnet
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,120);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110);

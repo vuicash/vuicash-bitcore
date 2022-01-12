@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Bitcoin Core
-Comment=Connect to the Qtum P2P Network
+Comment=Connect to the Vuicash P2P Network
 Exec=qtum-qt %u
 Terminal=false
 Type=Application

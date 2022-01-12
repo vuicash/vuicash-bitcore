@@ -24,7 +24,7 @@ def find_unspent(node, amount):
     assert(False)
 
 
-class QtumBlockHeaderTest(ComparisonTestFramework):
+class VuicashBlockHeaderTest(ComparisonTestFramework):
     def __init__(self):
         super().__init__()
         self.num_nodes = 1
@@ -171,4 +171,4 @@ class QtumBlockHeaderTest(ComparisonTestFramework):
 
 
 if __name__ == '__main__':
-    QtumBlockHeaderTest().main()
+    VuicashBlockHeaderTest().main()

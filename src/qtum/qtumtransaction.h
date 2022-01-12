@@ -42,16 +42,16 @@ struct VersionVM{
     }
 }__attribute__((__packed__));
 
-class QtumTransaction : public dev::eth::Transaction{
+class VuicashTransaction : public dev::eth::Transaction{
 
 public:
 
-    QtumTransaction() : nVout(0) {}
+    VuicashTransaction() : nVout(0) {}
 
-    QtumTransaction(dev::u256 const& _value, dev::u256 const& _gasPrice, dev::u256 const& _gas, dev::bytes const& _data, dev::u256 const& _nonce = dev::Invalid256):
+    VuicashTransaction(dev::u256 const& _value, dev::u256 const& _gasPrice, dev::u256 const& _gas, dev::bytes const& _data, dev::u256 const& _nonce = dev::Invalid256):
 		dev::eth::Transaction(_value, _gasPrice, _gas, _data, _nonce) {}
 
-    QtumTransaction(dev::u256 const& _value, dev::u256 const& _gasPrice, dev::u256 const& _gas, dev::Address const& _dest, dev::bytes const& _data, dev::u256 const& _nonce = dev::Invalid256):
+    VuicashTransaction(dev::u256 const& _value, dev::u256 const& _gasPrice, dev::u256 const& _gas, dev::Address const& _dest, dev::bytes const& _data, dev::u256 const& _nonce = dev::Invalid256):
 		dev::eth::Transaction(_value, _gasPrice, _gas, _dest, _data, _nonce) {}
 
     void setHashWith(const dev::h256 hash) { m_hashWith = hash; }

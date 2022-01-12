@@ -224,7 +224,7 @@ UniValue gethexaddress(const JSONRPCRequest& request) {
 
     CBitcoinAddress address(request.params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Vuicash address");
 
     if(!address.IsPubKeyHash())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Only pubkeyhash addresses are supported");
@@ -614,7 +614,7 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
 
             // Get dgp gas limit and gas price
             LOCK2(cs_main, pwalletMain->cs_wallet);
-            QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+            VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
             uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
             uint64_t minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
             CAmount nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
@@ -682,7 +682,7 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
         } else {
             CBitcoinAddress address(name_);
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Qtum address: ")+name_);
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Vuicash address: ")+name_);
 
             if (setAddress.count(address))
                 throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+name_);

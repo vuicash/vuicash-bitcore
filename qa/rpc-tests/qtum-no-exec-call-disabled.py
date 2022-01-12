@@ -19,7 +19,7 @@ def rpc_sign_transaction(node, tx):
     tx_signed.deserialize(f)
     return tx_signed
 
-class QtumNoExecCallDisabledTest(BitcoinTestFramework):
+class VuicashNoExecCallDisabledTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -74,4 +74,4 @@ class QtumNoExecCallDisabledTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    QtumNoExecCallDisabledTest().main()
+    VuicashNoExecCallDisabledTest().main()

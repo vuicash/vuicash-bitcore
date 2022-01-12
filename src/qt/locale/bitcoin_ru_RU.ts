@@ -56,10 +56,10 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>VuicashGUI</name>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum Core</translation>
+        <source>Vuicash</source>
+        <translation>Vuicash Core</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -228,8 +228,8 @@
 <context>
     <name>qtum-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>Vuicash Core</source>
+        <translation>Vuicash Core</translation>
     </message>
     <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>

@@ -52,7 +52,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Qtum cannot be compiled without assertions."
+# error "Vuicash cannot be compiled without assertions."
 #endif
 
 /**
@@ -65,7 +65,7 @@
 #include "pubkey.h"
 #include <univalue.h>
 
-std::unique_ptr<QtumState> globalState;
+std::unique_ptr<VuicashState> globalState;
 std::shared_ptr<dev::eth::SealEngineFace> globalSealEngine;
 bool fRecordLogOpcodes = false;
 bool fIsVMlogFile = false;
@@ -110,7 +110,7 @@ static bool UpdateHashProof(const CBlock& block, CValidationState& state, const 
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "Qtum Signed Message:\n";
+const std::string strMessageMagic = "Vuicash Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -771,23 +771,23 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
                 return state.DoS(1, false, REJECT_INVALID, "bad-txns-invalid-sender-script");
             }
 
-            QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+            VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
             uint64_t minGasPrice = qtumDGP.getMinGasPrice(chainActive.Tip()->nHeight + 1);
             uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Tip()->nHeight + 1);
             size_t count = 0;
             for(const CTxOut& o : tx.vout)
                 count += o.scriptPubKey.HasOpCreate() || o.scriptPubKey.HasOpCall() ? 1 : 0;
-            QtumTxConverter converter(tx, NULL);
-            ExtractQtumTX resultConverter;
-            if(!converter.extractionQtumTransactions(resultConverter)){
+            VuicashTxConverter converter(tx, NULL);
+            ExtractVuicashTX resultConverter;
+            if(!converter.extractionVuicashTransactions(resultConverter)){
                 return state.DoS(100, error("AcceptToMempool(): Contract transaction of the wrong format"), REJECT_INVALID, "bad-tx-bad-contract-format");
             }
-            std::vector<QtumTransaction> qtumTransactions = resultConverter.first;
+            std::vector<VuicashTransaction> qtumTransactions = resultConverter.first;
             std::vector<EthTransactionParams> qtumETP = resultConverter.second;
 
             dev::u256 sumGas = dev::u256(0);
             dev::u256 gasAllTxs = dev::u256(0);
-            for(QtumTransaction qtumTransaction : qtumTransactions){
+            for(VuicashTransaction qtumTransaction : qtumTransactions){
                 sumGas += qtumTransaction.gas() * qtumTransaction.gasPrice();
 
                 if(sumGas > dev::u256(INT64_MAX)) {
@@ -2097,7 +2097,7 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
         block.vtx.erase(block.vtx.begin()+1,block.vtx.end());
 
 
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+    VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
     uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Tip()->nHeight + 1);
 
     if(gasLimit == 0){
@@ -2107,12 +2107,12 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     tx.vout.push_back(CTxOut(0, CScript() << OP_DUP << OP_HASH160 << senderAddress.asBytes() << OP_EQUALVERIFY << OP_CHECKSIG));
     block.vtx.push_back(MakeTransactionRef(CTransaction(tx)));
  
-    QtumTransaction callTransaction(0, 1, dev::u256(gasLimit), addrContract, opcode, dev::u256(0));
+    VuicashTransaction callTransaction(0, 1, dev::u256(gasLimit), addrContract, opcode, dev::u256(0));
     callTransaction.forceSender(senderAddress);
     callTransaction.setVersion(VersionVM::GetEVMDefault());
 
     
-    ByteCodeExec exec(block, std::vector<QtumTransaction>(1, callTransaction), blockGasLimit);
+    ByteCodeExec exec(block, std::vector<VuicashTransaction>(1, callTransaction), blockGasLimit);
     exec.performByteCode(dev::eth::Permanence::Reverted);
     return exec.getResult();
 }
@@ -2309,7 +2309,7 @@ void writeVMlog(const std::vector<ResultExecute>& res, const CTransaction& tx, c
 }
 
 bool ByteCodeExec::performByteCode(dev::eth::Permanence type){
-    for(QtumTransaction& tx : txs){
+    for(VuicashTransaction& tx : txs){
         //validate VM version
         if(tx.getVersion().toRaw() != VersionVM::GetEVMDefault().toRaw()){
             return false;
@@ -2408,8 +2408,8 @@ dev::Address ByteCodeExec::EthAddrFromScript(const CScript& script){
     return dev::Address();
 }
 
-bool QtumTxConverter::extractionQtumTransactions(ExtractQtumTX& qtumtx){
-    std::vector<QtumTransaction> resultTX;
+bool VuicashTxConverter::extractionVuicashTransactions(ExtractVuicashTX& qtumtx){
+    std::vector<VuicashTransaction> resultTX;
     std::vector<EthTransactionParams> resultETP;
     for(size_t i = 0; i < txBit.vout.size(); i++){
         if(txBit.vout[i].scriptPubKey.HasOpCreate() || txBit.vout[i].scriptPubKey.HasOpCall()){
@@ -2430,7 +2430,7 @@ bool QtumTxConverter::extractionQtumTransactions(ExtractQtumTX& qtumtx){
     return true;
 }
 
-bool QtumTxConverter::receiveStack(const CScript& scriptPubKey){
+bool VuicashTxConverter::receiveStack(const CScript& scriptPubKey){
     EvalScript(stack, scriptPubKey, SCRIPT_EXEC_BYTE_CODE, BaseSignatureChecker(), SIGVERSION_BASE, nullptr);
     if (stack.empty())
         return false;
@@ -2447,7 +2447,7 @@ bool QtumTxConverter::receiveStack(const CScript& scriptPubKey){
     return true;
 }
 
-bool QtumTxConverter::parseEthTXParams(EthTransactionParams& params){
+bool VuicashTxConverter::parseEthTXParams(EthTransactionParams& params){
     try{
         dev::Address receiveAddress;
         valtype vecAddr;
@@ -2495,13 +2495,13 @@ bool QtumTxConverter::parseEthTXParams(EthTransactionParams& params){
     }
 }
 
-QtumTransaction QtumTxConverter::createEthTX(const EthTransactionParams& etp, uint32_t nOut){
-    QtumTransaction txEth;
+VuicashTransaction VuicashTxConverter::createEthTX(const EthTransactionParams& etp, uint32_t nOut){
+    VuicashTransaction txEth;
     if (etp.receiveAddress == dev::Address() && opcode != OP_CALL){
-        txEth = QtumTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.code, dev::u256(0));
+        txEth = VuicashTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.code, dev::u256(0));
     }
     else{
-        txEth = QtumTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.receiveAddress, etp.code, dev::u256(0));
+        txEth = VuicashTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.receiveAddress, etp.code, dev::u256(0));
     }
     dev::Address sender(GetSenderAddress(txBit, view, blockTransactions));
     txEth.forceSender(sender);
@@ -2521,8 +2521,8 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     int64_t nTimeStart = GetTimeMicros();
 
     ///////////////////////////////////////////////// // qtum
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-    globalSealEngine->setQtumSchedule(qtumDGP.getGasSchedule(pindex->nHeight + 1));
+    VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+    globalSealEngine->setVuicashSchedule(qtumDGP.getGasSchedule(pindex->nHeight + 1));
     uint32_t sizeBlockDGP = qtumDGP.getBlockSize(pindex->nHeight + 1);
     uint64_t minGasPrice = qtumDGP.getMinGasPrice(pindex->nHeight + 1);
     uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(pindex->nHeight + 1);
@@ -2798,25 +2798,25 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
                 return state.DoS(100, false, REJECT_INVALID, "bad-txns-invalid-sender-script");
             }
 
-            QtumTxConverter convert(tx, &view, &block.vtx);
+            VuicashTxConverter convert(tx, &view, &block.vtx);
 
-            ExtractQtumTX resultConvertQtumTX;
-            if(!convert.extractionQtumTransactions(resultConvertQtumTX)){
+            ExtractVuicashTX resultConvertVuicashTX;
+            if(!convert.extractionVuicashTransactions(resultConvertVuicashTX)){
                 return state.DoS(100, error("ConnectBlock(): Contract transaction of the wrong format"), REJECT_INVALID, "bad-tx-bad-contract-format");
             }
-            if(!CheckMinGasPrice(resultConvertQtumTX.second, minGasPrice))
+            if(!CheckMinGasPrice(resultConvertVuicashTX.second, minGasPrice))
                 return state.DoS(100, error("ConnectBlock(): Contract execution has lower gas price than allowed"), REJECT_INVALID, "bad-tx-low-gas-price");
 
 
             dev::u256 gasAllTxs = dev::u256(0);
-            ByteCodeExec exec(block, resultConvertQtumTX.first, blockGasLimit);
+            ByteCodeExec exec(block, resultConvertVuicashTX.first, blockGasLimit);
             //validate VM version and other ETH params before execution
             //Reject anything unknown (could be changed later by DGP)
             //TODO evaluate if this should be relaxed for soft-fork purposes
             bool nonZeroVersion=false;
             dev::u256 sumGas = dev::u256(0);
             CAmount nTxFee = view.GetValueIn(tx)-tx.GetValueOut();
-            for(QtumTransaction& qtx : resultConvertQtumTX.first){
+            for(VuicashTransaction& qtx : resultConvertVuicashTX.first){
                 sumGas += qtx.gas() * qtx.gasPrice();
 
                 if(sumGas > dev::u256(INT64_MAX)) {
@@ -2882,13 +2882,13 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
             std::vector<TransactionReceiptInfo> tri;
             if (fLogEvents)
             {
-                for(size_t k = 0; k < resultConvertQtumTX.first.size(); k ++){
+                for(size_t k = 0; k < resultConvertVuicashTX.first.size(); k ++){
                     dev::Address key = resultExec[k].execRes.newAddress;
                     if(!heightIndexes.count(key)){
                         heightIndexes[key].first = CHeightTxIndexKey(pindex->nHeight, resultExec[k].execRes.newAddress);
                     }
                     heightIndexes[key].second.push_back(tx.GetHash());
-                    tri.push_back(TransactionReceiptInfo{block.GetHash(), uint32_t(pindex->nHeight), tx.GetHash(), uint32_t(i), resultConvertQtumTX.first[k].from(), resultConvertQtumTX.first[k].to(),
+                    tri.push_back(TransactionReceiptInfo{block.GetHash(), uint32_t(pindex->nHeight), tx.GetHash(), uint32_t(i), resultConvertVuicashTX.first[k].from(), resultConvertVuicashTX.first[k].to(),
                                 countCumulativeGasUsed, uint64_t(resultExec[k].execRes.gasUsed), resultExec[k].execRes.newAddress, resultExec[k].txRec.log(), resultExec[k].execRes.excepted});
                 }
 
@@ -5080,7 +5080,7 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
 ////////////////////////////////////////////////////////////////////////// // qtum
     dev::h256 oldHashStateRoot(globalState->rootHash());
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
+    VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
 //////////////////////////////////////////////////////////////////////////
 
     LogPrintf("[0%%]...");
@@ -5417,7 +5417,7 @@ bool LoadExternalBlockFile(const CChainParams& chainparams, FILE* fileIn, CDiskB
                 }
 
                 // In Bitcoin this only needed to be done for genesis and at the end of block indexing
-                // But for Qtum PoS we need to sync this after every block to ensure txdb is populated for
+                // But for Vuicash PoS we need to sync this after every block to ensure txdb is populated for
                 // validating PoS proofs
                 {
                     CValidationState state;

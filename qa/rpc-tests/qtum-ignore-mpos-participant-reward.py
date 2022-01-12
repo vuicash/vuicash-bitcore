@@ -10,7 +10,7 @@ import sys
 import random
 import time
 
-class QtumIgnoreMPOSParticipantRewardTest(BitcoinTestFramework):
+class VuicashIgnoreMPOSParticipantRewardTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -96,4 +96,4 @@ class QtumIgnoreMPOSParticipantRewardTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), blockcount)
         
 if __name__ == '__main__':
-    QtumIgnoreMPOSParticipantRewardTest().main()
+    VuicashIgnoreMPOSParticipantRewardTest().main()

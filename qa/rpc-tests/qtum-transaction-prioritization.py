@@ -10,7 +10,7 @@ import sys
 import random
 import time
 
-class QtumTransactionPrioritizationTest(BitcoinTestFramework):
+class VuicashTransactionPrioritizationTest(BitcoinTestFramework):
     def __init__(self):
         super().__init__()
         self.setup_clean_chain = True
@@ -282,4 +282,4 @@ class QtumTransactionPrioritizationTest(BitcoinTestFramework):
         self.verify_contract_ancestor_txs_test(with_restart=True, use_staking=True)
 
 if __name__ == '__main__':
-    QtumTransactionPrioritizationTest().main()
+    VuicashTransactionPrioritizationTest().main()

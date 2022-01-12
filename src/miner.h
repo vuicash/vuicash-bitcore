@@ -297,7 +297,7 @@ private:
 };
 
 /** Generate a new block, without valid proof-of-work */
-void StakeQtums(bool fStake, CWallet *pwallet);
+void StakeVuicashs(bool fStake, CWallet *pwallet);
 
 /** Modify the extranonce in a block */
 void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
