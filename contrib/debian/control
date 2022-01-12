@@ -27,7 +27,7 @@ Homepage: https://qtum.org/
 Vcs-Git: git://github.com/vuicash/qtum.git
 Vcs-Browser: https://github.com/vuicash/qtum
 
-Package: qtumd
+Package: vuicashd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -37,7 +37,7 @@ Description: peer-to-peer network based digital currency - daemon
  and issuing money are carried out collectively by the network. Bitcoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, qtumd, and the CLI tool
+ This package provides the daemon, vuicashd, and the CLI tool
  qtum-cli to interact with the daemon.
 
 Package: qtum-qt

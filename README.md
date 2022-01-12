@@ -23,7 +23,7 @@ Basic usage resources:
 
 * [Official Qtum Usage Guide](https://github.com/vuicash/qtum/wiki/Qtum-Wallet-Tutorial)
 * [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)
-* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)
+* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-vuicashd-on-a-raspberry-pi-3)
 * [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)
 * [Block explorer](https://explorer.qtum.org)
 * [Unofficial block explorer](https://qtumexplorer.io/)
@@ -52,7 +52,7 @@ Developer's Tools
   * https://github.com/vuicash/qtumjs
 * A toolkit for building qtum light wallets
   * https://github.com/vuicash/qtumjs-wallet
-* CORS qtumd RPC proxy for DApp
+* CORS vuicashd RPC proxy for DApp
   * https://github.com/vuicash/qtumportal
 * Docker images for running qtum services
   * https://github.com/vuicash/qtum-docker
@@ -240,7 +240,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 ### Run
 
-Then you can either run the command-line daemon using `src/qtumd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+Then you can either run the command-line daemon using `src/vuicashd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
 
 For in-depth description of Sparknet and how to use Qtum for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
 

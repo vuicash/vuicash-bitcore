@@ -3,7 +3,7 @@
 *.exe
 src/qtum-cli
 src/qtum-tx
-src/qtumd
+src/vuicashd
 src/bench/bench_qtum
 src/qt/qtum-qt
 src/qt/test/test_qtum-qt

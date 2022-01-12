@@ -100,7 +100,7 @@ namespace boost {
 using namespace std;
 
 const char * const BITCOIN_CONF_FILENAME = "qtum.conf";
-const char * const BITCOIN_PID_FILENAME = "qtumd.pid";
+const char * const BITCOIN_PID_FILENAME = "vuicashd.pid";
 
 CCriticalSection cs_args;
 map<string, string> mapArgs;
