@@ -374,7 +374,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>هەڵبژاردنەکان:</translation>

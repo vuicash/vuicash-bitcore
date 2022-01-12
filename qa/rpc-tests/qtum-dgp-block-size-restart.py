@@ -4,7 +4,7 @@ from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
-from test_framework.qtum import *
+from test_framework.vuicash import *
 from test_framework.address import *
 from test_framework.blocktools import *
 import sys
@@ -13,7 +13,7 @@ import io
 import random
 
 """
-Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see qtum-dgp.py
+Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see vuicash-dgp.py
 """
 class VuicashDGPActivation(BitcoinTestFramework):
     def __init__(self):

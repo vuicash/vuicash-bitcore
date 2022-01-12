@@ -1,7 +1,7 @@
 What is Vuicash?
 -------------
 
-Vuicash is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Vuicash's Bitcoin-like UTXO blockchain. For more general information about Vuicash as well as links to join our community, go to https://qtum.org
+Vuicash is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Vuicash's Bitcoin-like UTXO blockchain. For more general information about Vuicash as well as links to join our community, go to https://vuicash.org
 
 Welcome to the Vuicash Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Vuicash, we highly recommend using either testnet or regtest mode. 
 
@@ -21,27 +21,27 @@ These are some resources that might be helpful in understanding Vuicash. Note th
 
 Basic usage resources:
 
-* [Official Vuicash Usage Guide](https://github.com/vuicash/qtum/wiki/Vuicash-Wallet-Tutorial)
-* [Unofficial Vuicash staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)
-* [Unofficial Vuicash staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-vuicashd-on-a-raspberry-pi-3)
-* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)
-* [Block explorer](https://explorer.qtum.org)
-* [Unofficial block explorer](https://qtumexplorer.io/)
-* [Unofficial Raspberry Pi Web UI](https://github.com/rpiwalletui/qtum-ui)
+* [Official Vuicash Usage Guide](https://github.com/vuicash/vuicash/wiki/Vuicash-Wallet-Tutorial)
+* [Unofficial Vuicash staking tutorial](https://steemit.com/vuicash/@cryptominder/vuicash-staking-tutorial-using-vuicash-qt)
+* [Unofficial Vuicash staking tutorial on Raspberry Pi](https://steemit.com/vuicash/@cryptominder/vuicash-staking-tutorial-using-vuicashd-on-a-raspberry-pi-3)
+* [Unofficial guide for keeping your wallet safe](https://steemit.com/vuicash/@cryptominder/encrypting-backing-up-and-restoring-your-vuicash-wallet)
+* [Block explorer](https://explorer.vuicash.org)
+* [Unofficial block explorer](https://vuicashexplorer.io/)
+* [Unofficial Raspberry Pi Web UI](https://github.com/rpiwalletui/vuicash-ui)
 
 Development resources:
 
-* [Deploying a custom token to Vuicash](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
-* [Unofficial Vuicash Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)
-* [Vuicash Book - A Developer's Guide To VUI](https://github.com/vuicash/qtumbook)
+* [Deploying a custom token to Vuicash](https://blog.vuicash.org/vuicash-custom-token-walkthrough-467d725fa27d)
+* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-vuicash-sparknet-faucet)
+* [Unofficial Vuicash Hello World tutorial](https://steemit.com/vuicash/@cryptominder/quantum-vuicash-blockchain-developer-tutorial-hello-world)
+* [Vuicash Book - A Developer's Guide To VUI](https://github.com/vuicash/vuicashbook)
 
 General Info about Vuicash:
 
-* [Mainnet event AMA](https://www.reddit.com/r/Vuicash/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)
-* [Vuicash's PoS vs CASPER](https://www.reddit.com/r/Vuicash/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
+* [Mainnet event AMA](https://www.reddit.com/r/Vuicash/comments/6zs8t0/official_vuicash_ama_thread_starts_at_10pm_beijing/)
+* [Vuicash's PoS vs CASPER](https://www.reddit.com/r/Vuicash/comments/788oa5/vuicashs_pos_vs_casper_and_the_nothingatstake_problem/)
 * [Technical article explaining Vuicash's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
-* [Unofficial What is Vuicash article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)
+* [Unofficial What is Vuicash article](https://storeofvalue.github.io/posts/what-is-vuicash-without-the-bullshit/)
 
 Developer's Tools
 -----------------
@@ -49,13 +49,13 @@ Developer's Tools
 * Smart contract deployment tool
   * https://github.com/vuicash/solar
 * DApp JavaScript Library
-  * https://github.com/vuicash/qtumjs
-* A toolkit for building qtum light wallets
-  * https://github.com/vuicash/qtumjs-wallet
+  * https://github.com/vuicash/vuicashjs
+* A toolkit for building vuicash light wallets
+  * https://github.com/vuicash/vuicashjs-wallet
 * CORS vuicashd RPC proxy for DApp
-  * https://github.com/vuicash/qtumportal
-* Docker images for running qtum services
-  * https://github.com/vuicash/qtum-docker
+  * https://github.com/vuicash/vuicashportal
+* Docker images for running vuicash services
+  * https://github.com/vuicash/vuicash-docker
 * HTTP API that powers the block explorer and the VUI web wallet
   * https://github.com/vuicash/insight-api
 
@@ -85,15 +85,15 @@ Vuicash Core uses a full node model, and thus requires downloading the entire bl
 
 A light wallet that supports the Ledger hardware wallet and is based on the well known Electrum wallet software. 
 
-Download: https://github.com/vuicash/qtum-electrum/releases
+Download: https://github.com/vuicash/vuicash-electrum/releases
 
 ### iOS and Android Wallets
 
 These wallets run on mobile devices and synchronize quickly. 
 
-Android Download: https://play.google.com/store/apps/details?id=org.qtum.wallet
+Android Download: https://play.google.com/store/apps/details?id=org.vuicash.wallet
 
-iOS Download: https://github.com/vuicash/qtum-ios (open source, we are still working with Apple to get approval for their app store)
+iOS Download: https://github.com/vuicash/vuicash-ios (open source, we are still working with Apple to get approval for their app store)
 
 ### Ledger Chrome Wallet
 
@@ -120,7 +120,7 @@ This is a quick start script for compiling Vuicash on  Ubuntu
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
 
     git clone https://github.com/vuicash/vuicash-bitcore --recursive
-    cd qtum
+    cd vuicash
 
     # Note autogen will prompt to install some more dependencies if needed
     ./autogen.sh
@@ -129,7 +129,7 @@ This is a quick start script for compiling Vuicash on  Ubuntu
     
 ### Build on CentOS
 
-Here is a brief description for compiling Vuicash on CentOS, for more details please refer to [the specific document](https://github.com/vuicash/qtum/blob/master/doc/build-unix.md)
+Here is a brief description for compiling Vuicash on CentOS, for more details please refer to [the specific document](https://github.com/vuicash/vuicash/blob/master/doc/build-unix.md)
 
     # Compiling boost manually
     sudo yum install python-devel bzip2-devel
@@ -149,8 +149,8 @@ Here is a brief description for compiling Vuicash on CentOS, for more details pl
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
     
     # Building Vuicash
-    git clone --recursive https://github.com/vuicash/qtum.git
-    cd qtum
+    git clone --recursive https://github.com/vuicash/vuicash.git
+    cd vuicash
     ./autogen.sh
     ./configure
     make -j4
@@ -219,14 +219,14 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 #### Build Vuicash Core
 
-1. Clone the qtum source code and cd into `qtum`
+1. Clone the vuicash source code and cd into `vuicash`
 
         git clone --recursive https://github.com/vuicash/vuicash-bitcore.git
         cd vuicash-bitcore
 
-2.  Build qtum-core:
+2.  Build vuicash-core:
 
-    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
+    Configure and build the headless vuicash binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -240,7 +240,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 ### Run
 
-Then you can either run the command-line daemon using `src/vuicashd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+Then you can either run the command-line daemon using `src/vuicashd` and `src/vuicash-cli`, or you can run the Qt GUI using `src/qt/vuicash-qt`
 
 For in-depth description of Sparknet and how to use Vuicash for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
 
@@ -253,12 +253,12 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/vuicash/qtum/tags) are created
+completely stable. [Tags](https://github.com/vuicash/vuicash/tags) are created
 regularly to indicate new official, stable release versions of Vuicash.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Developer IRC can be found on Freenode at #qtum-dev.
+Developer IRC can be found on Freenode at #vuicash-dev.
 
 Testing
 -------

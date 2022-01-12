@@ -290,16 +290,16 @@
         <translation>Barre d'outils des onglets</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Demander des paiements (générer QR codes et qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Demander des paiements (générer QR codes et vuicash: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
         <translation>Montrer la liste des adresses d'envois utilisées et les étiquettes</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Ouvrir un qtum: URI ou demande de paiement</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>Ouvrir un vuicash: URI ou demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1636,7 +1636,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Options :</translation>

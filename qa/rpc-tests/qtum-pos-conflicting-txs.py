@@ -5,7 +5,7 @@ from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
 from test_framework.blocktools import *
-from test_framework.qtum import *
+from test_framework.vuicash import *
 
 """
  This test specifically tests that inputs to transactions in the mempool are not used in staking.
@@ -58,7 +58,7 @@ class VuicashPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
         time_until_next_valid_block = int(self.nodes[0].getblock(self.nodes[0].getbestblockhash())['time'] - 16)
         self.nodes[0].setmocktime(time_until_next_valid_block)
 
-        # Allow the qtum staker some time to run (since we set a mocktime the time will not advance)
+        # Allow the vuicash staker some time to run (since we set a mocktime the time will not advance)
         time.sleep(80)
 
         # Now the staker will have found a valid staking block and is waiting to publish it to the network

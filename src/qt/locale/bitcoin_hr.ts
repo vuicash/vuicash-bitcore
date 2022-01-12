@@ -175,7 +175,7 @@
     </message>
     <message>
         <source>Send coins to a Vuicash address</source>
-        <translation>Slanje novca na qtum adresu</translation>
+        <translation>Slanje novca na vuicash adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -227,11 +227,11 @@
     </message>
     <message>
         <source>Sign messages with your Vuicash addresses to prove you own them</source>
-        <translation>Poruku potpišemo s qtum adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
+        <translation>Poruku potpišemo s vuicash adresom, kako bi dokazali vlasništvo nad tom adresom</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Vuicash addresses</source>
-        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom qtum adresom</translation>
+        <translation>Provjeravanje poruke, kao dokaz, da je potpisana navedenom vuicash adresom</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -250,8 +250,8 @@
         <translation>Traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Zatraži uplatu (stvara QR kod i qtum: URI adresu)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Zatraži uplatu (stvara QR kod i vuicash: URI adresu)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -262,8 +262,8 @@
         <translation>Prikaži popis korištenih adresa i oznaka za primanje novca</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Otvori qtum: URI adresu ili zahtjev za uplatu</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>Otvori vuicash: URI adresu ili zahtjev za uplatu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -423,7 +423,7 @@
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation>Oznaka qtum adrese</translation>
+        <translation>Oznaka vuicash adrese</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -617,7 +617,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio qtuma koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio vuicasha koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1012,7 +1012,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Postavke:</translation>

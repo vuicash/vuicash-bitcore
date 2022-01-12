@@ -214,12 +214,12 @@
         <translation>&amp;Ajutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Cerere plată (generează coduri QR și qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Cerere plată (generează coduri QR și vuicash: URIs)</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Deschide un qtum: URI sau cerere de plată</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>Deschide un vuicash: URI sau cerere de plată</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -746,7 +746,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Vuicash Core</source>
         <translation>Vuicash Core</translation>

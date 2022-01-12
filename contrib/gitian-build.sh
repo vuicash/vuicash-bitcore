@@ -18,7 +18,7 @@ SIGNER=
 VERSION=
 commit=false
 url=https://github.com/vuicash/vuicash-bitcore
-ethurl=https://github.com/vuicash/cpp-eth-qtum
+ethurl=https://github.com/vuicash/cpp-eth-vuicash
 proc=2
 mem=2000
 lxc=true
@@ -32,7 +32,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] version
 
-Run this script from the directory containing the vuicash-bitcore, gitian-builder, gitian.sigs, and qtum-detached-sigs.
+Run this script from the directory containing the vuicash-bitcore, gitian-builder, gitian.sigs, and vuicash-detached-sigs.
 
 Arguments:
 --signer signer          GPG signer to sign each build assert file
@@ -248,7 +248,7 @@ then
 	    exit 1
 	fi
 	# Make output folder
-	mkdir -p ./qtum-binaries/${VERSION}
+	mkdir -p ./vuicash-binaries/${VERSION}
 	
 	# Build Dependencies
 	echo ""
@@ -266,9 +266,9 @@ then
          echo ""
 	     echo "Compiling ${VERSION} Linux"
 	     echo ""
-	     ./bin/gbuild -j ${proc} -m ${mem} --commit vuicash-bitcore=${COMMIT},cpp-eth-qtum=develop --url vuicash-bitcore=${url},cpp-eth-qtum=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-linux.yml
+	     ./bin/gbuild -j ${proc} -m ${mem} --commit vuicash-bitcore=${COMMIT},cpp-eth-vuicash=develop --url vuicash-bitcore=${url},cpp-eth-vuicash=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-linux.yml
 	     ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../vuicash-bitcore/contrib/gitian-descriptors/gitian-linux.yml
-	     mv build/out/qtum-*.tar.gz build/out/src/qtum-*.tar.gz ../qtum-binaries/${VERSION}
+	     mv build/out/vuicash-*.tar.gz build/out/src/vuicash-*.tar.gz ../vuicash-binaries/${VERSION}
 	 fi
 	# Windows
 	if [[ $windows = true ]]
@@ -276,10 +276,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --num-make 8 --commit vuicash-bitcore=${COMMIT},cpp-eth-qtum=develop --url vuicash-bitcore=${url},cpp-eth-qtum=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gbuild -j ${proc} -m ${mem} --num-make 8 --commit vuicash-bitcore=${COMMIT},cpp-eth-vuicash=develop --url vuicash-bitcore=${url},cpp-eth-vuicash=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-win.yml
 	    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../vuicash-bitcore/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/qtum-*-win-unsigned.tar.gz inputs/qtum-win-unsigned.tar.gz
-	    mv build/out/qtum-*.zip build/out/qtum-*.exe ../qtum-binaries/${VERSION}
+	    mv build/out/vuicash-*-win-unsigned.tar.gz inputs/vuicash-win-unsigned.tar.gz
+	    mv build/out/vuicash-*.zip build/out/vuicash-*.exe ../vuicash-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -287,10 +287,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit vuicash-bitcore=${COMMIT},cpp-eth-qtum=develop --url vuicash-bitcore=${url},cpp-eth-qtum=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit vuicash-bitcore=${COMMIT},cpp-eth-vuicash=develop --url vuicash-bitcore=${url},cpp-eth-vuicash=${ethurl} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-osx.yml
 	    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../vuicash-bitcore/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/qtum-*-osx-unsigned.tar.gz inputs/qtum-osx-unsigned.tar.gz
-	    mv build/out/qtum-*.tar.gz build/out/qtum-*.dmg ../qtum-binaries/${VERSION}
+	    mv build/out/vuicash-*-osx-unsigned.tar.gz inputs/vuicash-osx-unsigned.tar.gz
+	    mv build/out/vuicash-*.tar.gz build/out/vuicash-*.dmg ../vuicash-binaries/${VERSION}
 	fi
 	popd
 
@@ -359,8 +359,8 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=${COMMIT} ../vuicash-bitcore/contrib/gitian-descriptors/gitian-win-signer.yml
 	    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../vuicash-bitcore/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/qtum-*win64-setup.exe ../qtum-binaries/${VERSION}
-	    mv build/out/qtum-*win32-setup.exe ../qtum-binaries/${VERSION}
+	    mv build/out/vuicash-*win64-setup.exe ../vuicash-binaries/${VERSION}
+	    mv build/out/vuicash-*win32-setup.exe ../vuicash-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -370,7 +370,7 @@ then
 	    echo ""
 	    ./bin/gbuild -i --commit signature=master ../vuicash-bitcore/contrib/gitian-descriptors/gitian-osx-signer.yml
 	    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../vuicash-bitcore/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/qtum-osx-signed.dmg ../qtum-binaries/${VERSION}/qtum-${VERSION}-osx.dmg
+	    mv build/out/vuicash-osx-signed.dmg ../vuicash-binaries/${VERSION}/vuicash-${VERSION}-osx.dmg
 	fi
 	popd
 

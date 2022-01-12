@@ -1,4 +1,4 @@
-# helpers for qtum
+# helpers for vuicash
 from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *

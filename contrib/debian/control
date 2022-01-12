@@ -1,4 +1,4 @@
-Source: qtum
+Source: vuicash
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk>
@@ -23,9 +23,9 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://qtum.org/
-Vcs-Git: git://github.com/vuicash/qtum.git
-Vcs-Browser: https://github.com/vuicash/qtum
+Homepage: https://vuicash.org/
+Vcs-Git: git://github.com/vuicash/vuicash.git
+Vcs-Browser: https://github.com/vuicash/vuicash
 
 Package: vuicashd
 Architecture: any
@@ -38,9 +38,9 @@ Description: peer-to-peer network based digital currency - daemon
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, vuicashd, and the CLI tool
- qtum-cli to interact with the daemon.
+ vuicash-cli to interact with the daemon.
 
-Package: qtum-qt
+Package: vuicash-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
@@ -52,7 +52,7 @@ Description: peer-to-peer network based digital currency - Qt GUI
  .
  This package provides Bitcoin-Qt, a GUI for Bitcoin based on Qt.
 
-Package: qtum-tx
+Package: vuicash-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
@@ -62,6 +62,6 @@ Description: peer-to-peer digital currency - standalone transaction tool
  and issuing money are carried out collectively by the network. Bitcoin Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides qtum-tx, a command-line transaction creation
- tool which can be used without a qtum daemon.  Some means of
+ This package provides vuicash-tx, a command-line transaction creation
+ tool which can be used without a vuicash daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

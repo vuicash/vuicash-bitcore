@@ -51,13 +51,13 @@ void RPCNestedTests::rpcNestedTests()
     pcoinsdbview = new CCoinsViewDB(1 << 23, true);
     pcoinsTip = new CCoinsViewCache(pcoinsdbview);
     InitBlockIndex(chainparams);
-    /////////////////////////////////////////////////////////// qtum
+    /////////////////////////////////////////////////////////// vuicash
     dev::eth::Ethash::init();		
     boost::filesystem::path pathTemp = GetTempPath() / strprintf("test_bitcoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
     boost::filesystem::create_directories(pathTemp);
     const dev::h256 hashDB(dev::sha3(dev::rlp("")));
     globalState = std::unique_ptr<VuicashState>(new VuicashState(dev::u256(0), VuicashState::openDB(pathTemp.string(), hashDB, dev::WithExisting::Trust), pathTemp.string(), dev::eth::BaseState::Empty));
-    dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::qtumTestNetwork)));
+    dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::vuicashTestNetwork)));
     globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
     globalState->populateFrom(cp.genesisState);
     globalState->setRootUTXO(uintToh256(chainparams.GenesisBlock().hashUTXORoot));

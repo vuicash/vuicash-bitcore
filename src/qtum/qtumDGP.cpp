@@ -1,4 +1,4 @@
-#include "qtumDGP.h"
+#include "vuicashDGP.h"
 
 void VuicashDGP::initDataEIP158(){
     std::vector<uint32_t> tempData = {dev::eth::EIP158Schedule.tierStepGas[0], dev::eth::EIP158Schedule.tierStepGas[1], dev::eth::EIP158Schedule.tierStepGas[2],

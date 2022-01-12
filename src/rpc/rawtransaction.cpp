@@ -308,7 +308,7 @@ UniValue getrawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"address\"        (string) qtum address\n"
+            "           \"address\"        (string) vuicash address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -350,7 +350,7 @@ UniValue getrawtransaction(const JSONRPCRequest& request)
     CTransactionRef tx;
     uint256 hashBlock;
 
-    //////////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////////// // vuicash
     int nHeight = 0;
     int nConfirmations = 0;
     int nBlockTime = 0;
@@ -525,7 +525,7 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
             "     ]\n"
             "2. \"outputs\"               (string, required) a json object with outputs\n"
             "    {\n"
-            "      \"address\": x.xxx,    (numeric or string, required) The key is the qtum address, the numeric value (can be string) is the " + CURRENCY_UNIT + " amount\n"
+            "      \"address\": x.xxx,    (numeric or string, required) The key is the vuicash address, the numeric value (can be string) is the " + CURRENCY_UNIT + " amount\n"
             "      \"data\": \"hex\"      (string, required) The key is \"data\", the value is hex encoded data\n"
             "      \"contract\":{\n"
             "         \"contractAddress\":\"address\", (string, required) Valid contract address (valid hash160 hex data)\n"
@@ -614,9 +614,9 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
 
             // Get dgp gas limit and gas price
             LOCK2(cs_main, pwalletMain->cs_wallet);
-            VuicashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-            uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
-            uint64_t minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
+            VuicashDGP vuicashDGP(globalState.get(), fGettingValuesDGP);
+            uint64_t blockGasLimit = vuicashDGP.getBlockGasLimit(chainActive.Height());
+            uint64_t minGasPrice = CAmount(vuicashDGP.getMinGasPrice(chainActive.Height()));
             CAmount nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
 
             // Get the contract address
@@ -740,7 +740,7 @@ UniValue decoderawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"Q2tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) qtum address\n"
+            "           \"Q2tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) vuicash address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -783,7 +783,7 @@ UniValue decodescript(const JSONRPCRequest& request)
             "  \"type\":\"type\", (string) The output type\n"
             "  \"reqSigs\": n,    (numeric) The required signatures\n"
             "  \"addresses\": [   (json array of string)\n"
-            "     \"address\"     (string) qtum address\n"
+            "     \"address\"     (string) vuicash address\n"
             "     ,...\n"
             "  ],\n"
             "  \"p2sh\",\"address\" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).\n"

@@ -14,7 +14,7 @@ These actions are executed once when first using gitian-builder. If you have use
 1. ```vuicash-bitcore/contrib/gitian-build.sh --setup``` This command create and setup virtual machines to build your binaries files. This command may take a while (about 40 minutes). If you want to use KVM as build VM , run script with ```--kvm```.
     ```vuicash-bitcore/contrib/gitian-build.sh --setup --kvm```
 
-2. Create the OS X SDK tarball( https://github.com/vuicash/qtum/blob/master/doc/README_osx.md), create inputs/ folder in gitian-builder/ . Copy MacOSX10.11.sdk.tar.gz into the inputs/ directory.
+2. Create the OS X SDK tarball( https://github.com/vuicash/vuicash/blob/master/doc/README_osx.md), create inputs/ folder in gitian-builder/ . Copy MacOSX10.11.sdk.tar.gz into the inputs/ directory.
 ##### Not first time
 Ensure that the ./gitian.sigs directory is up to date for signs verifying.
 
@@ -70,14 +70,14 @@ Output will look something like:
     Running build script (log in var/build.log)
 
 
-Binaries will be in qtum-binaries/ . Signatures will appear in gitian.sigs/ . Signatures will be committed and you should push it manually. Sigs haven't committed with ```--no-commit```.
+Binaries will be in vuicash-binaries/ . Signatures will appear in gitian.sigs/ . Signatures will be committed and you should push it manually. Sigs haven't committed with ```--no-commit```.
 
 Build output expected:
 
-  1. source tarball (`qtum-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`qtum-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`qtum-${VERSION}-win[32|64]-setup-unsigned.exe`, `qtum-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`qtum-${VERSION}-osx-unsigned.dmg`, `qtum-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`vuicash-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`vuicash-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`vuicash-${VERSION}-win[32|64]-setup-unsigned.exe`, `vuicash-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`vuicash-${VERSION}-osx-unsigned.dmg`, `vuicash-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
@@ -99,15 +99,15 @@ Verify the signatures
 
 Codesigner only: Sign the osx binary:
 
-    transfer qtum-osx-unsigned.tar.gz to osx for signing
-    tar xf qtum-osx-unsigned.tar.gz
+    transfer vuicash-osx-unsigned.tar.gz to osx for signing
+    tar xf vuicash-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf qtum-win-unsigned.tar.gz
+    tar xf vuicash-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -126,7 +126,7 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
     Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-    Detached signatures will then be committed to the qtum-detached-sigs repository, which can be combined with the unsigned apps to create signed binaries.
+    Detached signatures will then be committed to the vuicash-detached-sigs repository, which can be combined with the unsigned apps to create signed binaries.
 Create the signed OS X binary:
 ```vuicash-bitcore/contrib/gitian-build.sh --sign -o x --signer signer version```
 

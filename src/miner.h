@@ -14,7 +14,7 @@
 #include "boost/multi_index_container.hpp"
 #include "boost/multi_index/ordered_index.hpp"
 
-#include <validation.h> // qtum
+#include <validation.h> // vuicash
 
 class CBlockIndex;
 class CChainParams;
@@ -231,7 +231,7 @@ private:
     int lastFewTxs;
     bool blockFinished;
 
-///////////////////////////////////////////// // qtum
+///////////////////////////////////////////// // vuicash
     ByteCodeExecResult bceResult;
     uint64_t minGasPrice = 1;
     uint64_t hardBlockGasLimit;
@@ -240,7 +240,7 @@ private:
 /////////////////////////////////////////////
 
     // The original constructed reward tx (either coinbase or coinstake) without gas refund adjustments
-    CMutableTransaction originalRewardTx; // qtum
+    CMutableTransaction originalRewardTx; // vuicash
 
     //When GetAdjustedTime() exceeds this, no more transactions will attempt to be added
     int32_t nTimeLimit;

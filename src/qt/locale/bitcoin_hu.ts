@@ -234,8 +234,8 @@
         <translation>Fül eszköztár</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Fizetési kérelem (QR-kódot és "qtum:" URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Fizetési kérelem (QR-kódot és "vuicash:" URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -246,8 +246,8 @@
         <translation>A használt fogadó címek és címkék megtekintése</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>"qtum:" URI azonosító vagy fizetési kérelem megnyitása</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>"vuicash:" URI azonosító vagy fizetési kérelem megnyitása</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1348,7 +1348,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciók
@@ -1533,7 +1533,7 @@
     </message>
     <message>
         <source>Insufficient funds</source>
-        <translation>Nincs elég qtumod.</translation>
+        <translation>Nincs elég vuicashod.</translation>
     </message>
     <message>
         <source>Loading block index...</source>

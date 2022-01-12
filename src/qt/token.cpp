@@ -74,10 +74,10 @@ struct TokenData
 
 bool ToHash160(const std::string& strVuicashAddress, std::string& strHash160)
 {
-    CBitcoinAddress qtumAddress(strVuicashAddress);
-    if(qtumAddress.IsValid()){
+    CBitcoinAddress vuicashAddress(strVuicashAddress);
+    if(vuicashAddress.IsValid()){
         CKeyID keyid;
-        qtumAddress.GetKeyID(keyid);
+        vuicashAddress.GetKeyID(keyid);
         strHash160 = HexStr(valtype(keyid.begin(),keyid.end()));
     }else{
         return false;
@@ -89,10 +89,10 @@ bool ToVuicashAddress(const std::string& strHash160, std::string& strVuicashAddr
 {
     uint160 key(ParseHex(strHash160.c_str()));
     CKeyID keyid(key);
-    CBitcoinAddress qtumAddress;
-    qtumAddress.Set(keyid);
-    if(qtumAddress.IsValid()){
-        strVuicashAddress = qtumAddress.ToString();
+    CBitcoinAddress vuicashAddress;
+    vuicashAddress.Set(keyid);
+    if(vuicashAddress.IsValid()){
+        strVuicashAddress = vuicashAddress.ToString();
         return true;
     }
     return false;

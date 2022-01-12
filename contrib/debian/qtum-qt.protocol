@@ -1,6 +1,6 @@
 [Protocol]
-exec=qtum-qt '%u'
-protocol=qtum
+exec=vuicash-qt '%u'
+protocol=vuicash
 input=none
 output=none
 helper=true

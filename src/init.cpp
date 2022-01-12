@@ -192,7 +192,7 @@ void Shutdown()
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("qtum-shutoff");
+    RenameThread("vuicash-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -523,8 +523,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/vuicash/qtum>";
-    const std::string URL_WEBSITE = "<https://qtum.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/vuicash/vuicash>";
+    const std::string URL_WEBSITE = "<https://vuicash.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i"), COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -1188,7 +1188,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (fPrintToDebugLog)
         OpenDebugLog();
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // vuicash
     dev::g_logPost = [&](std::string const& s, char const* c){ LogPrintStr(s + '\n', true); };
     dev::g_logPost(std::string("\n\n\n\n\n\n\n\n\n\n"), NULL);
 //////////////////////////////////////////////////////////////////////
@@ -1501,7 +1501,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
                 if (!mapBlockIndex.empty() && mapBlockIndex.count(chainparams.GetConsensus().hashGenesisBlock) == 0)
                     return InitError(_("Incorrect or no genesis block found. Wrong datadir for network?"));
 
-                /////////////////////////////////////////////////////////// qtum
+                /////////////////////////////////////////////////////////// vuicash
                 if((IsArgSet("-dgpstorage") && IsArgSet("-dgpevm")) || (!IsArgSet("-dgpstorage") && IsArgSet("-dgpevm")) ||
                   (!IsArgSet("-dgpstorage") && !IsArgSet("-dgpevm"))){
                     fGettingValuesDGP = true;
@@ -1511,17 +1511,17 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
                 dev::eth::Ethash::init();
 
-                boost::filesystem::path qtumStateDir = GetDataDir() / "stateVuicash";
+                boost::filesystem::path vuicashStateDir = GetDataDir() / "stateVuicash";
 
-                bool fStatus = boost::filesystem::exists(qtumStateDir);
-                const std::string dirVuicash(qtumStateDir.string());
+                bool fStatus = boost::filesystem::exists(vuicashStateDir);
+                const std::string dirVuicash(vuicashStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
                 dev::eth::BaseState existsVuicashstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
                 globalState = std::unique_ptr<VuicashState>(new VuicashState(dev::u256(0), VuicashState::openDB(dirVuicash, hashDB, dev::WithExisting::Trust), dirVuicash, existsVuicashstate));
-                dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::qtumMainNetwork)));
+                dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::vuicashMainNetwork)));
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
-                pstorageresult = new StorageResults(qtumStateDir.string());
+                pstorageresult = new StorageResults(vuicashStateDir.string());
 
                 if(chainActive.Tip() != NULL){
                     globalState->setRoot(uintToh256(chainActive.Tip()->hashStateRoot));
@@ -1549,7 +1549,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
                     strLoadError = _("You need to rebuild the database using -reindex-chainstate to change -txindex");
                     break;
                 }
-                /////////////////////////////////////////////////////////////// // qtum
+                /////////////////////////////////////////////////////////////// // vuicash
                 if (fAddressIndex != GetBoolArg("-addrindex", DEFAULT_ADDRINDEX)) {
                     strLoadError = _("You need to rebuild the database using -reindex-chainstate to change -addrindex");
                     break;

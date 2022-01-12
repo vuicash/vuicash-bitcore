@@ -1,5 +1,5 @@
 ---
-name: "qtum-linux-0.14"
+name: "vuicash-linux-0.14"
 enable_cache: true
 suites:
 - "trusty"
@@ -35,13 +35,13 @@ packages:
 remotes:
 - "url": "https://github.com/vuicash/vuicash-bitcore.git"
   "dir": "vuicash-bitcore"
-- "url": "https://github.com/vuicash/cpp-eth-qtum.git"
-  "dir": "cpp-eth-qtum"
+- "url": "https://github.com/vuicash/cpp-eth-vuicash.git"
+  "dir": "cpp-eth-vuicash"
 files: []
 script: |
   #this is a hack since gitian has no natural support for submodules
   #make sure this file exists... 
-  cp -r cpp-eth-qtum/* vuicash-bitcore/src/cpp-ethereum
+  cp -r cpp-eth-vuicash/* vuicash-bitcore/src/cpp-ethereum
   cat vuicash-bitcore/src/cpp-ethereum/utils/libscrypt/b64.c 
 
   WRAP_DIR=$HOME/wrapped
@@ -147,13 +147,13 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make V=1 dist
-  SOURCEDIST=`echo qtum-*.tar.gz`
+  SOURCEDIST=`echo vuicash-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find qtum-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find vuicash-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   ORIGPATH="$PATH"

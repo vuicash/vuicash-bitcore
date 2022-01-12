@@ -99,7 +99,7 @@ namespace boost {
 
 using namespace std;
 
-const char * const BITCOIN_CONF_FILENAME = "qtum.conf";
+const char * const BITCOIN_CONF_FILENAME = "vuicash.conf";
 const char * const BITCOIN_PID_FILENAME = "vuicashd.pid";
 
 CCriticalSection cs_args;
@@ -193,7 +193,7 @@ static FILE* fileout = NULL;
 static boost::mutex* mutexDebugLog = NULL;
 static list<string> *vMsgsBeforeOpenLog;
 
-/////////////////////////////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////////////////////////////// // vuicash
 static FILE* fileoutVM = NULL;
 ///////////////////////////////////////////////////////////////////////
 
@@ -215,12 +215,12 @@ void OpenDebugLog()
     boost::mutex::scoped_lock scoped_lock(*mutexDebugLog);
 
     assert(fileout == NULL);
-    assert(fileoutVM == NULL); // qtum
+    assert(fileoutVM == NULL); // vuicash
     assert(vMsgsBeforeOpenLog);
     boost::filesystem::path pathDebug = GetDataDir() / "debug.log";
-    boost::filesystem::path pathDebugVM = GetDataDir() / "vm.log"; // qtum
+    boost::filesystem::path pathDebugVM = GetDataDir() / "vm.log"; // vuicash
     fileout = fopen(pathDebug.string().c_str(), "a");
-    fileoutVM = fopen(pathDebugVM.string().c_str(), "a"); // qtum
+    fileoutVM = fopen(pathDebugVM.string().c_str(), "a"); // vuicash
     if (fileout) {
         setbuf(fileout, NULL); // unbuffered
         // dump buffered messages from before we opened the log
@@ -229,7 +229,7 @@ void OpenDebugLog()
             vMsgsBeforeOpenLog->pop_front();
         }
     }
-    ///////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////// // vuicash
     if (fileoutVM) {
         setbuf(fileoutVM, NULL); // unbuffered
         // dump buffered messages from before we opened the log
@@ -308,7 +308,7 @@ static std::string LogTimestampStr(const std::string &str, std::atomic_bool *fSt
 int LogPrintStr(const std::string &str, bool useVMLog)
 {
 
-//////////////////////////////// // qtum
+//////////////////////////////// // vuicash
     FILE* file = fileout;
     if(useVMLog){
         file = fileoutVM;
@@ -506,7 +506,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Vuicash
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Vuicash
     // Mac: ~/Library/Application Support/Vuicash
-    // Unix: ~/.qtum
+    // Unix: ~/.vuicash
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Vuicash";
@@ -522,7 +522,7 @@ boost::filesystem::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Vuicash";
 #else
     // Unix
-    return pathRet / ".qtum";
+    return pathRet / ".vuicash";
 #endif
 #endif
 }

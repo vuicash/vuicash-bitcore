@@ -65,9 +65,9 @@ void runTest(bool isCreation, size_t n, CScript& script1, CScript script2 = CScr
     tx2 = createTX(outs2, hashParentTx);
     CTransaction transaction(tx2);
     VuicashTxConverter converter(transaction, NULL);
-    ExtractVuicashTX qtumTx;
-    BOOST_CHECK(converter.extractionVuicashTransactions(qtumTx));
-    std::vector<VuicashTransaction> result = qtumTx.first;
+    ExtractVuicashTX vuicashTx;
+    BOOST_CHECK(converter.extractionVuicashTransactions(vuicashTx));
+    std::vector<VuicashTransaction> result = vuicashTx.first;
     if(script2 == CScript()){
         BOOST_CHECK(result.size() == n);
     } else {
@@ -99,11 +99,11 @@ void runFailingTest(bool isCreation, size_t n, CScript& script1, CScript script2
     tx2 = createTX(outs2, hashParentTx);
     CTransaction transaction(tx2);
     VuicashTxConverter converter(transaction, NULL);
-    ExtractVuicashTX qtumTx;
-    BOOST_CHECK(!converter.extractionVuicashTransactions(qtumTx));
+    ExtractVuicashTX vuicashTx;
+    BOOST_CHECK(!converter.extractionVuicashTransactions(vuicashTx));
 }
 
-BOOST_FIXTURE_TEST_SUITE(qtumtxconverter_tests, TestingSetup)
+BOOST_FIXTURE_TEST_SUITE(vuicashtxconverter_tests, TestingSetup)
 
 BOOST_AUTO_TEST_CASE(parse_txcreate){
     CScript script1 = CScript() << CScriptNum(VersionVM::GetEVMDefault().toRaw()) << CScriptNum(int64_t(gasLimit)) << CScriptNum(int64_t(gasPrice)) << data << OP_CREATE;

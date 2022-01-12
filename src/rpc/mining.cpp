@@ -195,7 +195,7 @@ UniValue generatetoaddress(const JSONRPCRequest& request)
             "\nMine blocks immediately to a specified address (before the RPC call returns)\n"
             "\nArguments:\n"
             "1. nblocks      (numeric, required) How many blocks are generated immediately.\n"
-            "2. address      (string, required) The address to send the newly generated qtum to.\n"
+            "2. address      (string, required) The address to send the newly generated vuicash to.\n"
             "3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).\n"
             "\nResult:\n"
             "[ blockhashes ]     (array) hashes of blocks generated\n"
@@ -761,7 +761,7 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     }
     result.push_back(Pair("sigoplimit", nSigOpLimit));
     if (fPreSegWit) {
-        result.push_back(Pair("sizelimit", (int64_t)dgpMaxBlockSize)); // qtum
+        result.push_back(Pair("sizelimit", (int64_t)dgpMaxBlockSize)); // vuicash
     } else {
         result.push_back(Pair("sizelimit", (int64_t)dgpMaxBlockSerSize));
         result.push_back(Pair("weightlimit", (int64_t)dgpMaxBlockWeight));

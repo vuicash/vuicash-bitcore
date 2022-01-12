@@ -1,4 +1,4 @@
-#include "qtumversionchecker.h"
+#include "vuicashversionchecker.h"
 #include "../clientversion.h"
 
 #include <boost/foreach.hpp>
@@ -10,7 +10,7 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatchIterator>
 
-#define paternVersion "qtum-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
+#define paternVersion "vuicash-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
 VuicashVersionChecker::VuicashVersionChecker(QObject *parent) : QObject(parent)
 {

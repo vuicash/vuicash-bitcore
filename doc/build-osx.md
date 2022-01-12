@@ -27,15 +27,15 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 Build Build Vuicash Core
 ------------------------
 
-1. Clone the qtum source code and cd into `qtum`
+1. Clone the vuicash source code and cd into `vuicash`
 
-        git clone --recursive https://github.com/vuicash/qtum.git
-        cd qtum
+        git clone --recursive https://github.com/vuicash/vuicash.git
+        cd vuicash
         git submodule update --init --recursive
 
-2.  Build qtum-core:
+2.  Build vuicash-core:
 
-    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
+    Configure and build the headless vuicash binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 

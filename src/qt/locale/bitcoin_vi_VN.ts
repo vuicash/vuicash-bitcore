@@ -238,7 +238,7 @@
         <translation>Thanh công cụ (toolbar)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
         <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Vuicash: URLs)</translation>
     </message>
     <message>
@@ -250,8 +250,8 @@
         <translation>Hiện thỉ danh sách các địa chỉ và nhãn đã dùng để nhận.</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Mở qtum:URL hoặc yêu cầu thanh toán</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>Mở vuicash:URL hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -992,7 +992,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Lựa chọn:</translation>

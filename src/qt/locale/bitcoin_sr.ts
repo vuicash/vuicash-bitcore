@@ -131,7 +131,7 @@
     </message>
     <message>
         <source>Send coins to a Vuicash address</source>
-        <translation>Пошаљите новац на qtum адресу</translation>
+        <translation>Пошаљите новац на vuicash адресу</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -442,7 +442,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcije</translation>

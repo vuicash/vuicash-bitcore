@@ -143,7 +143,7 @@
     </message>
     <message>
         <source>Send coins to a Vuicash address</source>
-        <translation>Enviar monedas a una dirección qtum</translation>
+        <translation>Enviar monedas a una dirección vuicash</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -206,8 +206,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Pide pagos (genera codigos QR and qtum: URls)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Pide pagos (genera codigos QR and vuicash: URls)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -750,7 +750,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:
@@ -773,7 +773,7 @@
     </message>
     <message>
         <source>Vuicash Core</source>
-        <translation>qtum core</translation>
+        <translation>vuicash core</translation>
     </message>
     <message>
         <source>Error loading block database</source>

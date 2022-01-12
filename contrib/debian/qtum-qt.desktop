@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Name=Bitcoin Core
 Comment=Connect to the Vuicash P2P Network
-Exec=qtum-qt %u
+Exec=vuicash-qt %u
 Terminal=false
 Type=Application
-Icon=qtum128
-MimeType=x-scheme-handler/qtum;
+Icon=vuicash128
+MimeType=x-scheme-handler/vuicash;
 Categories=Office;Finance;

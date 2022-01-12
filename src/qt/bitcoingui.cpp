@@ -25,7 +25,7 @@
 #include "rpc/server.h"
 #include "navigationbar.h"
 #include "titlebar.h"
-#include "qtumversionchecker.h"
+#include "vuicashversionchecker.h"
 
 #ifdef ENABLE_WALLET
 #include "walletframe.h"
@@ -143,7 +143,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     rpcConsole(0),
     helpMessageDialog(0),
     modalOverlay(0),
-    qtumVersionChecker(0),
+    vuicashVersionChecker(0),
     modalBackupOverlay(0),
     prevBlocks(0),
     spinnerFrame(0),
@@ -292,9 +292,9 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
 
     modalOverlay = new ModalOverlay(this->centralWidget());
     modalBackupOverlay = new ModalOverlay(this, ModalOverlay::Backup);
-    qtumVersionChecker = new VuicashVersionChecker(this);
+    vuicashVersionChecker = new VuicashVersionChecker(this);
 
-    if(fCheckForUpdates && qtumVersionChecker->newVersionAvailable())
+    if(fCheckForUpdates && vuicashVersionChecker->newVersionAvailable())
     {
         QString link = QString("<a href=%1>%2</a>").arg(VUI_RELEASES, VUI_RELEASES);
         QString message(tr("New version of Vuicash wallet is available on the Vuicash source code repository: <br /> %1. <br />It is recommended to download it and update this application").arg(link));
@@ -352,7 +352,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/receive_from"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and qtum: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and vuicash: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
@@ -468,7 +468,7 @@ void BitcoinGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(platformStyle->MenuColorIcon(":/icons/open"), tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a qtum: URI or payment request"));
+    openAction->setStatusTip(tr("Open a vuicash: URI or payment request"));
 
     showHelpMessageAction = new QAction(platformStyle->MenuColorIcon(":/icons/info"), tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);

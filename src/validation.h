@@ -33,14 +33,14 @@
 #include <boost/filesystem/path.hpp>
 #include "consensus/consensus.h"
 
-/////////////////////////////////////////// qtum
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
+/////////////////////////////////////////// vuicash
+#include <vuicash/vuicashstate.h>
+#include <vuicash/vuicashDGP.h>
 #include <libethereum/ChainParams.h>
 #include <libethashseal/Ethash.h>
 #include <libethashseal/GenesisInfo.h>
 #include <script/standard.h>
-#include <qtum/storageresults.h>
+#include <vuicash/storageresults.h>
 
 
 extern std::unique_ptr<VuicashState> globalState;
@@ -183,7 +183,7 @@ static const uint64_t DEFAULT_GAS_LIMIT_OP_SEND=250000;
 static const CAmount DEFAULT_GAS_PRICE=0.00000040*COIN;
 static const CAmount MAX_RPC_GAS_PRICE=0.00000100*COIN;
 
-static const size_t MAX_CONTRACT_VOUTS = 1000; // qtum
+static const size_t MAX_CONTRACT_VOUTS = 1000; // vuicash
 
 struct BlockHasher
 {
@@ -207,7 +207,7 @@ extern std::atomic_bool fImporting;
 extern bool fReindex;
 extern int nScriptCheckThreads;
 extern bool fTxIndex;
-extern bool fAddressIndex; // qtum
+extern bool fAddressIndex; // vuicash
 extern bool fLogEvents;
 extern bool fIsBareMultisigStd;
 extern bool fRequireStandard;
@@ -381,7 +381,7 @@ std::string FormatStateMessage(const CValidationState &state);
 /** Get the BIP9 state for a given deployment at the current tip. */
 ThresholdState VersionBitsTipState(const Consensus::Params& params, Consensus::DeploymentPos pos);
 
-//////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////// // vuicash
 struct CTimestampIndexIteratorKey {
     unsigned int timestamp;
 
@@ -920,7 +920,7 @@ public:
     ScriptError GetScriptError() const { return error; }
 };
 
-///////////////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////////////// // vuicash
 bool GetAddressIndex(uint160 addressHash, int type,
                      std::vector<std::pair<CAddressIndexKey, CAmount> > &addressIndex,
                      int start = 0, int end = 0);
@@ -1054,7 +1054,7 @@ bool LoadMempool();
 
 bool CheckReward(const CBlock& block, CValidationState& state, int nHeight, const Consensus::Params& consensusParams, CAmount nFees, CAmount gasRefunds, CAmount nActualStakeReward, const std::vector<CTxOut>& vouts);
 
-//////////////////////////////////////////////////////// qtum
+//////////////////////////////////////////////////////// vuicash
 std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, const dev::Address& sender = dev::Address(), uint64_t gasLimit=0);
 
 bool CheckSenderScript(const CCoinsViewCache& view, const CTransaction& tx);
@@ -1097,7 +1097,7 @@ public:
 
     VuicashTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL) : txBit(tx), view(v), blockTransactions(blockTxs){}
 
-    bool extractionVuicashTransactions(ExtractVuicashTX& qtumTx);
+    bool extractionVuicashTransactions(ExtractVuicashTX& vuicashTx);
 
 private:
 

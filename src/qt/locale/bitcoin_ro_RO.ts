@@ -230,8 +230,8 @@
         <translation>Bara de unelte</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Cereţi plăţi (generează coduri QR şi qtum-uri: URls)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Cereţi plăţi (generează coduri QR şi vuicash-uri: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -242,8 +242,8 @@
         <translation>Arată lista de adrese pentru primire şi etichetele</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Deschidere qtum: o adresa URI sau o cerere de plată</translation>
+        <source>Open a vuicash: URI or payment request</source>
+        <translation>Deschidere vuicash: o adresa URI sau o cerere de plată</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -725,7 +725,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de qtum.</translation>
+        <translation>Alegeţi subdiviziunea folosită la afişarea interfeţei şi la trimiterea de vuicash.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -765,7 +765,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa qtum pe care aţi specificat-o nu este validă.</translation>
+        <translation>Adresa vuicash pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -1385,7 +1385,7 @@
     </message>
     <message>
         <source>The Vuicash address to send the payment to</source>
-        <translation>Adresa qtum către care se face plata</translation>
+        <translation>Adresa vuicash către care se face plata</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1412,8 +1412,8 @@
         <translation>Introduceţi eticheta pentru ca această adresa să fie introdusă în lista de adrese folosite</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vuicash network.</source>
-        <translation>un mesaj a fost ataşat la qtum: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua qtum.</translation>
+        <source>A message that was attached to the vuicash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Vuicash network.</source>
+        <translation>un mesaj a fost ataşat la vuicash: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua vuicash.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -1568,7 +1568,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Options:</source>
         <translation>Opţiuni:</translation>

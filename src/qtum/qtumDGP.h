@@ -1,7 +1,7 @@
 #ifndef VUIDGP_H
 #define VUIDGP_H
 
-#include "qtumstate.h"
+#include "vuicashstate.h"
 #include "primitives/block.h"
 #include "validation.h"
 #include "utilstrencodings.h"

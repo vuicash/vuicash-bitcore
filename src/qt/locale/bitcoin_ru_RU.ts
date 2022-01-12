@@ -226,14 +226,14 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Vuicash Core</source>
         <translation>Vuicash Core</translation>
     </message>
     <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation>qtum-core</translation>
+        <translation>vuicash-core</translation>
     </message>
     <message>
         <source>Information</source>

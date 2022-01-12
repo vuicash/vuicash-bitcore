@@ -39,8 +39,8 @@ OSX_PLIST=$(top_builddir)/share/qt/Info.plist #not installed
 OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
-DIST_CONTRIB = $(top_srcdir)/contrib/qtum-cli.bash-completion \
-	       $(top_srcdir)/contrib/qtum-tx.bash-completion \
+DIST_CONTRIB = $(top_srcdir)/contrib/vuicash-cli.bash-completion \
+	       $(top_srcdir)/contrib/vuicash-tx.bash-completion \
 	       $(top_srcdir)/contrib/vuicashd.bash-completion \
 	       $(top_srcdir)/contrib/init \
 	       $(top_srcdir)/contrib/rpm

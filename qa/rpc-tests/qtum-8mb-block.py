@@ -5,7 +5,7 @@ from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
 from test_framework.blocktools import *
-from test_framework.qtum import *
+from test_framework.vuicash import *
 
 class Vuicash8MBBlock(BitcoinTestFramework):
     def __init__(self):

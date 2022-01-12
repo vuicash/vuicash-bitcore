@@ -1,14 +1,14 @@
 *.tar.gz
 
 *.exe
-src/qtum-cli
-src/qtum-tx
+src/vuicash-cli
+src/vuicash-tx
 src/vuicashd
-src/bench/bench_qtum
-src/qt/qtum-qt
-src/qt/test/test_qtum-qt
-src/test/test_qtum
-src/test/test_qtum_fuzzy
+src/bench/bench_vuicash
+src/qt/vuicash-qt
+src/qt/test/test_vuicash-qt
+src/test/test_vuicash
+src/test/test_vuicash_fuzzy
 
 # autoreconf
 Makefile.in
