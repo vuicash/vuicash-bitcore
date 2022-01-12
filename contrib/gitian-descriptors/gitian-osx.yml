@@ -28,9 +28,9 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/qtumproject/qtum-bitcore.git"
+- "url": "https://github.com/vuicash/qtum-bitcore.git"
   "dir": "qtum-bitcore"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
+- "url": "https://github.com/vuicash/cpp-eth-qtum.git"
   "dir": "cpp-eth-qtum"
 files:
 - "MacOSX10.11.sdk.tar.gz"

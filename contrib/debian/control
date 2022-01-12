@@ -24,8 +24,8 @@ Build-Depends: debhelper,
  python
 Standards-Version: 3.9.2
 Homepage: https://qtum.org/
-Vcs-Git: git://github.com/qtumproject/qtum.git
-Vcs-Browser: https://github.com/qtumproject/qtum
+Vcs-Git: git://github.com/vuicash/qtum.git
+Vcs-Browser: https://github.com/vuicash/qtum
 
 Package: qtumd
 Architecture: any

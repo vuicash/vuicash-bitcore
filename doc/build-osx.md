@@ -29,7 +29,7 @@ Build Build Qtum Core
 
 1. Clone the qtum source code and cd into `qtum`
 
-        git clone --recursive https://github.com/qtumproject/qtum.git
+        git clone --recursive https://github.com/vuicash/qtum.git
         cd qtum
         git submodule update --init --recursive
 
