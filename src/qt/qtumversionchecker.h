@@ -1,9 +1,9 @@
-#ifndef QTUMVERSIONCHECKER_H
-#define QTUMVERSIONCHECKER_H
+#ifndef VUIVERSIONCHECKER_H
+#define VUIVERSIONCHECKER_H
 
 #include <QObject>
 
-#define QTUM_RELEASES "https://github.com/vuicash/qtum/releases"
+#define VUI_RELEASES "https://github.com/vuicash/qtum/releases"
 
 class Version {
 
@@ -97,4 +97,4 @@ private:
     Version currentVersion;
 };
 
-#endif // QTUMVERSIONCHECKER_H
+#endif // VUIVERSIONCHECKER_H

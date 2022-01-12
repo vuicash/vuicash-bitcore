@@ -216,7 +216,7 @@ if test "x$enable_debug" = xyes; then
     fi
 fi
 
-CPPFLAGS="$CPPFLAGS -DQTUM_BUILD"
+CPPFLAGS="$CPPFLAGS -DVUI_BUILD"
 
 ERROR_CXXFLAGS=
 if test "x$enable_werror" = "xyes"; then
